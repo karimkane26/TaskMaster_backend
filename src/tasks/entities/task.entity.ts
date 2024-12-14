@@ -1,5 +1,6 @@
 /* eslint-disable prettier/prettier */
-import { Entity, Column, PrimaryGeneratedColumn,ManyToOne  } from 'typeorm';
+// src/tasks/entities/task.entity.ts
+import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
 import { UserEntity } from 'src/users/entities/user.entity';
 
 @Entity()
@@ -16,9 +17,9 @@ export class TaskEntity {
   @Column({ default: false })
   isCompleted: boolean;
 
-    @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })  // Valeur par défaut de la date actuelle
+  @Column({ type: 'timestamptz', default: () => 'CURRENT_TIMESTAMP' })
   dueDate: Date;
 
-  @ManyToOne(() => UserEntity, (user) => user.tasks,{ onDelete: 'CASCADE' })  // Relation ManyToOne avec l'entité User
+  @ManyToOne(() => UserEntity, (user) => user.tasks, { onDelete: 'CASCADE' })
   user: UserEntity;
 }

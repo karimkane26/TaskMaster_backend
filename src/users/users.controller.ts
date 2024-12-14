@@ -48,10 +48,8 @@ export class UsersController {
 @Post('login')
 async login(@Body() loginUserDto: LoginUserDto, @Request() req: any): Promise<{ message: string }> {
   const userWithToken = await this.usersService.login(loginUserDto.email, loginUserDto.password);
-   
-
   const token = this.usersService.generateToken(userWithToken.user);
-  // console.log(token);
+  console.log(token);
   
   
   // Écrire le token dans un cookie sécurisé
