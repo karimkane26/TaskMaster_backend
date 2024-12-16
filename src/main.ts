@@ -10,7 +10,7 @@ async function bootstrap() {
   // Configuration de CORS avec plusieurs origines
   app.enableCors({
     origin: [
-      'http://localhost:3000', 
+      // 'http://localhost:3000', 
       'https://task-master-frontend-9ovp0bzkd-karimkane26s-projects.vercel.app', 
     ],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
