@@ -16,7 +16,9 @@ import { DataSource,DataSourceOptions } from "typeorm";
        entities: ['dist/**/*.entity{.ts,.js}'],
        migrations:['dist/db/migrations/*{.ts,.js}'],
        logging:false,
-       synchronize:true
+      //  synchronize:true
+      synchronize: process.env.NODE_ENV === 'development', // Synchronisation en développement uniquement
+
 } 
  const dataSource = new DataSource(dataSourceOptions);
  export default dataSource;
