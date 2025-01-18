@@ -1,7 +1,9 @@
 /* eslint-disable prettier/prettier */
 
 import { DataSource,DataSourceOptions } from "typeorm";
+const logger = new Logger('DatabaseConnection');
  import {config} from 'dotenv';
+import { Logger } from "@nestjs/common";
  config()
  export const dataSourceOptions:DataSourceOptions = {
     type: 'postgres',
@@ -17,10 +19,13 @@ import { DataSource,DataSourceOptions } from "typeorm";
        migrations:['dist/db/migrations/*{.ts,.js}'],
        logging:false,
       //  synchronize:true
-      synchronize: process.env.NODE_ENV === 'development', // Synchronisation en développement uniquement
+      synchronize: true // Synchronisation en développement uniquement
 
 } 
  const dataSource = new DataSource(dataSourceOptions);
+ dataSource.initialize().catch((error) => {
+   logger.error('Error during Data Source initialization', error);
+ });
  export default dataSource;
 
 
