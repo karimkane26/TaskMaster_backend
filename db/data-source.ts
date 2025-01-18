@@ -1,9 +1,7 @@
 /* eslint-disable prettier/prettier */
 
 import { DataSource,DataSourceOptions } from "typeorm";
-const logger = new Logger('DatabaseConnection');
  import {config} from 'dotenv';
-import { Logger } from "@nestjs/common";
  config()
  export const dataSourceOptions:DataSourceOptions = {
     type: 'postgres',
@@ -23,9 +21,7 @@ import { Logger } from "@nestjs/common";
 
 } 
  const dataSource = new DataSource(dataSourceOptions);
- dataSource.initialize().catch((error) => {
-   logger.error('Error during Data Source initialization', error);
- });
+ 
  export default dataSource;
 
 
