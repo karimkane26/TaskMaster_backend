@@ -11,7 +11,6 @@ import { TaskEntity } from 'src/tasks/entities/task.entity';
   imports: [
     // TypeOrmModule.forFeature([UserEntity,TaskEntity]),
     TypeOrmModule.forFeature([UserEntity,TaskEntity]),
-
     AuthModule, // Assurez-vous que le module contenant JwtService est importé
   ],
   controllers: [UsersController],
