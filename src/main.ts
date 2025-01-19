@@ -9,13 +9,16 @@ async function bootstrap() {
 
   // Configuration de CORS avec plusieurs origines
   app.enableCors({
-    origin:'https://task-master-frontend-olive.vercel.app',
+    origin: [
+      'https://task-master-frontend-olive.vercel.app',
+      'https://task-master-frontend-git-main-karimkane26s-projects.vercel.app',
+      'https://task-master-frontend-9g1mjrsf8-karimkane26s-projects.vercel.app'
+    ],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
-    // allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
-    allowedHeaders: ['Content-Type', 'Authorization'],
+    allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
     credentials: true, // Accepte les cookies pour les requêtes CORS
   });
-
+  
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe());
   app.setGlobalPrefix('api/v1'); // Préfixe global pour toutes les routes
