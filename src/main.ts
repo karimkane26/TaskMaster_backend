@@ -9,7 +9,7 @@ async function bootstrap() {
 
   // Configuration de CORS avec plusieurs origines
   app.enableCors({
-    origin:'task-master-frontend-olive.vercel.app',
+    origin:'https://task-master-frontend-olive.vercel.app',
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
     // allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
     allowedHeaders: '*',
