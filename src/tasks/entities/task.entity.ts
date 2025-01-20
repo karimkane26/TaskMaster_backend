@@ -14,6 +14,9 @@ export class TaskEntity {
   @Column()
   description: string;
 
+  @Column({ type: 'int', default: 0 })
+  progress: number; //
+  
   @Column({ default: false })
   isCompleted: boolean;
 

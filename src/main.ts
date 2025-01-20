@@ -12,7 +12,8 @@ async function bootstrap() {
     origin: [
       'https://task-master-frontend-olive.vercel.app',
       'https://task-master-frontend-git-main-karimkane26s-projects.vercel.app',
-      'https://task-master-frontend-9g1mjrsf8-karimkane26s-projects.vercel.app'
+      'https://task-master-frontend-9g1mjrsf8-karimkane26s-projects.vercel.app',
+      'http://localhost:3000'
     ],
     methods: ['GET', 'POST', 'PATCH', 'PUT', 'DELETE'], // Méthodes HTTP autorisées
     allowedHeaders: ['Content-Type', 'Authorization'], // En-têtes autorisés
